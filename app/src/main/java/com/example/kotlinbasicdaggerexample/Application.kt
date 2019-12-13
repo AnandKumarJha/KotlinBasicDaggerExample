@@ -1,10 +1,10 @@
 package com.example.kotlinbasicdaggerexample
 
 import android.app.Application
-import com.example.kotlinbasicdaggerexample.component.DaggerUserComponent
-import com.example.kotlinbasicdaggerexample.component.UserComponent
-import com.example.kotlinbasicdaggerexample.module.EmployeeModule
-import com.example.kotlinbasicdaggerexample.module.StudentModule
+import com.example.kotlinbasicdaggerexample.di.component.DaggerUserComponent
+import com.example.kotlinbasicdaggerexample.di.component.UserComponent
+import com.example.kotlinbasicdaggerexample.di.module.EmployeeModule
+import com.example.kotlinbasicdaggerexample.di.module.StudentModule
 
 class MyApplication : Application(){
 
@@ -13,10 +13,14 @@ class MyApplication : Application(){
     override fun onCreate() {
         super.onCreate()
 
-        mUserComponent = DaggerUserComponent.builder().employeeModule(EmployeeModule(this)).studentModule(StudentModule(this)).build()
+        mUserComponent = DaggerUserComponent.builder().employeeModule(
+            EmployeeModule(
+                this
+            )
+        ).studentModule(StudentModule(this)).build()
     }
 
-    fun getUserComponent() : UserComponent{
+    fun getUserComponent() : UserComponent {
         return mUserComponent
     }
 }

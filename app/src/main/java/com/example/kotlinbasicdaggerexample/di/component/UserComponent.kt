@@ -1,8 +1,8 @@
-package com.example.kotlinbasicdaggerexample.component
+package com.example.kotlinbasicdaggerexample.di.component
 
 import com.example.kotlinbasicdaggerexample.MainActivity
-import com.example.kotlinbasicdaggerexample.module.EmployeeModule
-import com.example.kotlinbasicdaggerexample.module.StudentModule
+import com.example.kotlinbasicdaggerexample.di.module.EmployeeModule
+import com.example.kotlinbasicdaggerexample.di.module.StudentModule
 import dagger.Component
 
 @Component(modules = [StudentModule::class, EmployeeModule::class])

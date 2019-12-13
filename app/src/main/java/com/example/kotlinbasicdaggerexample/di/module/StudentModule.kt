@@ -1,4 +1,4 @@
-package com.example.kotlinbasicdaggerexample.module
+package com.example.kotlinbasicdaggerexample.di.module
 
 import android.content.Context
 import com.example.kotlinbasicdaggerexample.Student
